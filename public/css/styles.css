@@ -4,3 +4,217 @@
 *:after {
   box-sizing: border-box;
 }
+body {
+  margin: 0 auto;
+  max-width: 750px;
+  background-image: url("/images/site/checkerboard.jpg");
+}
+
+#wrapper {
+  padding: 0 .5rem;
+  margin: 1rem;
+  background-color: white;
+  border-style: solid;
+  border-color: #01B0D3;
+  border-radius: 15px;
+}
+ /* header */
+#top-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#top-header a {
+  text-decoration: none;
+}
+.siteName {
+  padding-top: 2%;
+}
+
+.siteName a {
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+#tools {
+  padding-top: 2%;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+/* navigation */
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: black;
+  border-radius: .5rem;
+}
+
+nav ul li {
+  text-align: center;
+  padding: 1rem .3rem;
+  color: white;
+}
+
+/* main */
+main {
+  margin: 2rem 0;
+}
+
+main > h2, #reviews h2, #left-content h2 {
+  margin-bottom: .8rem;
+}
+
+.container{
+  position: relative;
+  max-width: 650px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  padding: 20px;
+}
+
+.delorean {
+  width: 300px;
+  height: auto;
+}
+
+#top-content {
+  position: absolute;
+  top: 0;
+  padding: .1rem;
+  background-color: #f8f8f8a0;
+  color: #01B0D3;
+}
+#top-content h2 {
+  font-size: 15px;
+}
+
+#top-content ul {
+  font-size: 12px;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: .1rem;
+}
+#top-content ul .button {
+  color: black;
+  width: 95%;
+  align-self: center;
+}
+
+#top-content .button {
+  padding: .5rem 1rem;
+  border: none;
+  background-color: #01B0D3;
+  white-space: nowrap;
+}
+
+
+/* upgrades */
+#left-content {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1rem;
+}
+
+.image-content {
+  margin: auto;
+  width: 100%;
+  max-width: 150px;
+}
+
+.image-content * {
+  text-align: center;
+  display: block;
+}
+
+.image-content span {
+  background-color: #01B0D3;
+  height: 90px;
+  border-radius: .4rem;
+  position: relative;
+}
+
+.image-content-img {
+  position: absolute; 
+  top: .5rem; 
+  right: 0; 
+  left: 0;
+  margin: 0 auto; 
+}
+
+/* Reviews */
+
+#reviews{
+  margin-bottom: 2rem;
+}
+
+#reviews ul {
+  padding-left: 1rem;  
+}
+#reviews li {
+  margin: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 2rem auto;
+    background-image: url("/images/site/small_check.jpg");
+  }
+
+  #wrapper {
+    border: .4rem solid #01B0D3;
+    border-radius: .5rem;
+  }
+  .bottom-content {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+  }
+  #delorean-upgrades {
+    order: -1;
+  }
+
+  .delorean {
+    width:500px;
+    height: auto;
+  }
+
+  #top-content {
+    position: absolute;
+    top: 0;
+    padding: .6rem;
+    background-color: #f8f8f8a0;
+    color: #01B0D3;
+  }
+
+  #top-content h2 {
+    font-size: larger;
+  } 
+  
+  #top-content ul {
+    font-size: medium;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: .95rem;
+  }
+  #top-content ul .button {
+    color: black;
+    width: 90%;
+    align-self: center;
+  }
+  
+  #top-content .button {
+    padding: .3rem 1rem;
+    border: none;
+    background-color: #01B0D3;
+    white-space: nowrap;
+  }
+
+  #reviews li {
+    margin: 20px;
+  }
+}
