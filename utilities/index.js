@@ -37,9 +37,9 @@ Util.buildClassificationGrid = async function(data){
       + '" title="View ' + vehicle.inv_make + ' '+ vehicle.inv_model 
       + 'details"><img src="' + vehicle.inv_thumbnail 
       +'" alt="Image of '+ vehicle.inv_make + ' ' + vehicle.inv_model 
-      +' on CSE Motors" /></a>'
+      +' on CSE Motors" ></a>'
       grid += '<div class="namePrice">'
-      grid += '<hr />'
+      grid += '<hr>'
       grid += '<h2>'
       grid += '<a href="../../inv/detail/' + vehicle.inv_id +'" title="View ' 
       + vehicle.inv_make + ' ' + vehicle.inv_model + ' details">' 
@@ -55,6 +55,46 @@ Util.buildClassificationGrid = async function(data){
     grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
   }
   return grid
+}
+
+Util.buildDetailsGrid = async function (dataObj) {
+  let grid = ''
+  dataObj.forEach(data => {
+  grid =`
+  <img class="car-picture" src="${data.inv_image}" alt="Image of ${data.inv_make} ${data.inv_model} on CSE Motors">
+  <div class="details-inner-box">
+  <h2 class="car-detail-name">${data.inv_make} ${data.inv_model} Details</h2>
+  <span class="price"><b>Price:</b> ${new Intl.NumberFormat('en-US',{style: 'currency', currency: 'USD'}).format(data.inv_price)}</span>
+  <p class="desc-text"><b>Description:</b> ${data.inv_description}</p>
+  <span class="color"><b>Color:</b> ${data.inv_color}</span>
+  <span class="mileage"><b>Miles:</b> ${new Intl.NumberFormat('en-US').format(data.inv_miles)}</span>
+  </div>`         
+  });
+  return grid
+}
+
+
+/* ************************
+ * Constructs the nav HTML unordered list
+ ************************** */
+Util.getNav = async function (req, res, next) {
+  let data = await invModel.getClassifications()
+  let list = "<ul>"
+  list += '<li><a href="/" title="Home page">Home</a></li>'
+  data.rows.forEach((row) => {
+    list += "<li>"
+    list +=
+      '<a href="/inv/type/' +
+      row.classification_id +
+      '" title="See our inventory of ' +
+      row.classification_name +
+      ' vehicles">' +
+      row.classification_name +
+      "</a>"
+    list += "</li>"
+  })
+  list += "</ul>"
+  return list
 }
 
 /* 

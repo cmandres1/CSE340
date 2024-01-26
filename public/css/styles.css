@@ -55,9 +55,14 @@ nav ul {
 }
 
 nav ul li {
+  justify-content: center;
   text-align: center;
   padding: 1rem .3rem;
+}
+
+nav ul li a {
   color: white;
+  text-decoration: none;
 }
 
 /* main */
@@ -159,10 +164,80 @@ main > h2, #reviews h2, #left-content h2 {
   margin: 5px;
 }
 
+/************ Classification page *************/
+#inv-display {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding: 0;
+  justify-items: center;
+  gap: 1rem;
+}
+
+#inv-display li {
+  width: 200px;
+  border: 2px solid black;
+  border-radius: .5rem;
+  height: 280px;
+}
+
+#inv-display li > a {
+  display: block;
+  text-align: center;
+  height: 150px;
+}
+
+#inv-display li a img {
+  border-radius: .5rem;
+  width: 100%;
+}
+
+.namePrice h2 a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.namePrice hr {
+  border: 1px solid black;
+}
+
+.namePrice {
+  text-align: center;
+}
+
+/* Details Page */
+
+.car-picture {
+  width: 100%;
+}
+
+.desc-text {
+  background-color: rgb(199, 195, 195);
+}
+
+
+/* Error Image */
+.error-image{
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
   body {
     margin: 2rem auto;
     background-image: url("/images/site/small_check.jpg");
+  }
+
+  /* Nav */
+
+  nav ul li a:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  nav ul li {
+    display: inline;
+    height: 55px;
+    font-size: 25px;  
   }
 
   #wrapper {
@@ -216,5 +291,31 @@ main > h2, #reviews h2, #left-content h2 {
 
   #reviews li {
     margin: 20px;
+  }
+
+  /* Details Box */
+
+  #inv-display {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    padding: 0;
+    justify-items: center;
+    gap: 1rem;
+  }
+
+  .details-outer-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 2rem;
+    gap: 2rem; 
+  }
+  
+  .car-picture {
+    grid-column: 1/2;
+  }
+  
+  .details-inner-box {
+    grid-column: 2/3;
   }
 }
