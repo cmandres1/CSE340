@@ -57,6 +57,10 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+
+/* 
+Build the grid for the details page
+*/
 Util.buildDetailsGrid = async function (dataObj) {
   let grid = ''
   dataObj.forEach(data => {
@@ -96,6 +100,32 @@ Util.getNav = async function (req, res, next) {
   list += "</ul>"
   return list
 }
+
+Util.passwordButton = async function () {
+    const pswdBtn = document.querySelector("#ShowPswdBtn");
+    pswdBtn.addEventListener("click", function() {
+    const pswdInput = document.getElementById("pword");
+    const type = pswdInput.getAttribute("type");
+    if (type == "password") {
+        pswdInput.setAttribute("type", "text");
+        pswdBtn.innerHTML = "Hide Password";
+    } else {
+        pswdInput.setAttribute("type", "password");
+        pswdBtn.innerHTML = "Show Password";
+    }
+});
+}
+
+Util.buildOptions = async function() {
+    const classificationData = await invModel.getClassifications()
+    let options = ''
+    const classInner = [classificationData.rows]
+    classInner[0].forEach(classification => {
+        options += `<option value= ${classification.classification_id} >${classification.classification_name}</option>`
+    })
+    return options
+}
+
 
 /* 
 Middleware For Handling Errors

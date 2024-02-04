@@ -1,0 +1,23 @@
+<h1 class="add-classification-page"><%= title %></h1>
+<%- messages() %>
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+  
+<div class="add-classification-wrapper">
+    <div class="add-box">
+        <form action="/inv/add-classification" method="post">
+            <p>Enter the new classification name, must be alphabetical characters only</p>
+            <hr>
+            <label for="classification_name">
+                Classification Name:
+                <input type="text" name="classification_name" id="classification_name" required placeholder="New classification name" value="<%= locals.classification_name %>">
+            </label>
+            <button type="submit" class="add-class-button">Add Classification</button>
+        </form>
+    </div>
+</div>

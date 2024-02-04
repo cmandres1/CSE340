@@ -1,0 +1,20 @@
+<h1 class="login-page-title"><%= title %></h1>
+<%- messages() %>
+<div class="login-wrapper">
+    <div class="login-box">
+        <form id="loginForm" action="/account/login" method="post">
+            <label for="account_email">
+                User Name:
+                <input type="email" name="account_email" required>
+            </label>
+            <label for="account_password">
+                Password:
+                <input type="password" name="account_password" required>
+            </label>
+           <!--  <span id="ShowPwdBtn">Show Password</span> -->
+            <p>Passwords must be minimum of 12 characters and include 1 capital letter, 1 number and 1 special character(*, &, $, %, #, @, !)</p>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <p class="no-registration">You don't have an account yet? <a class="register" href="/account/registration">Sign In</a></p>
+    </div>
+</div>

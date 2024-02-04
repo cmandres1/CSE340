@@ -221,6 +221,122 @@ main > h2, #reviews h2, #left-content h2 {
   width: 100%;
 }
 
+/*Login Page style*/
+.login-page-title, .registration-page-title {
+  margin: 1rem;
+  font-family: 'Kanit', 'sans-serif';
+  font-size: 2rem;
+}
+
+.login-box, .register-box {
+  margin: 0 auto;
+  background-color: rgb(48, 93, 135);
+  border-radius: 5px;
+  border: 5px solid black;
+  max-width: 500px;
+
+}
+
+form {
+  margin: 2rem;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  margin: 1rem;
+  color: white;
+  width: 80%;
+}
+
+input {
+  width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+}
+
+form p {
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  margin: 1rem;
+  color: white;  
+}
+
+.login-box p, .register-box p {
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  margin: 1rem;
+  color: white;
+  text-align: justify;
+}
+
+.login-box a, .register-box p {
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  color: white;
+}
+
+.login-button, .register-button {
+  height: 2rem;
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.no-registration, .registered {
+  padding: 1rem;
+}
+
+.login-wrapper, .register-wrapper {
+  margin: 1rem;
+}
+
+.login, .register {
+  color: white;
+}
+
+/*Add Classification View Styling*/
+.add-classification-page {
+  margin: 1rem;
+  font-family: 'sans-serif';
+  font-size: 2rem;
+}
+
+.add-classification-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.add-box {
+  margin: 2rem auto;
+  background-color: rgb(48, 93, 135);
+  border-radius: 5px;
+  border: 5px solid black;
+  max-width: 500px;
+}
+
+.add-class-button {
+  height: 2rem;
+  font-size: 1rem;
+  font-family: 'sans-serif';
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.add-inventory-title {
+  margin: 1rem;
+  font-family: 'sans-serif';
+  font-size: 2rem;
+}
+
+
 @media screen and (min-width: 768px) {
   body {
     margin: 2rem auto;
