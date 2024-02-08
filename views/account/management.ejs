@@ -1,0 +1,13 @@
+<h1 class="account-management-title"><%= title %></h1>
+<%- messages() %>
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+    
+<ul class="account-management-list">
+    <li><a title="Click to edit your account information" href="#">Edit your account information</a></li>
+</ul>

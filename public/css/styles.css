@@ -221,6 +221,194 @@ main > h2, #reviews h2, #left-content h2 {
   width: 100%;
 }
 
+/*Messages styling*/
+#messages ul {
+  padding: 0;
+}
+#messages ul li {
+  display: block;
+  font-family: 'Work Sans','sans-serif';
+  font-size: 2rem;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(48, 93, 135) ;
+  color: white;
+}
+
+.notice {
+  padding: 0;
+}
+.notice li {
+  list-style: none;
+  color: black;
+  font-family: 'Work Sans','sans-serif';
+  font-size: 15px;
+  padding:  5px;
+}
+
+/*Classification pages styling*/
+.classification-page-title {
+  margin: 1rem;
+  font-family: 'Kanit', 'sans-serif';
+  font-size: 2rem;
+}
+
+.inv-display {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  margin: 1rem;
+  gap: 1rem;
+}
+
+.inv-display li {
+  list-style: none;
+  border-radius: 5px;
+  border: 3px solid black;
+
+}
+
+.picture-anchor {
+  display: block;
+}
+
+.picture-anchor img {
+  display: block;
+  width: 90%;
+  margin: 5px auto;
+}
+
+.namePrice a {
+  display: block;
+}
+.namePrice h2 {
+  font-family: 'Kanit', 'sans-serif';
+  text-align: center;
+}
+
+.namePrice span {
+  display: block;
+  font-family: 'Work Sans','sans-serif';
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 10px;
+
+  
+}
+
+.no-cars-notice {
+  margin: 3rem;
+  font-family: 'Kanit', 'sans-serif';
+  text-align: center;
+}
+
+/*Details Page styling*/
+.details-page-title {
+  font-family: 'Kanit', 'sans-serif';
+  margin: 1rem;
+  font-size: 2.5rem;
+}
+
+.details-outer-box {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.car-picture {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.car-detail-name {
+  font-family: 'Kanit', 'sans-serif';
+  margin: 1rem;
+  font-size: 2rem;
+}
+
+.price {
+  display: block;
+  margin:1rem;
+  padding: 1rem;
+  font-family: 'Work Sans','sans-serif';
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.desc-text {
+  padding: 1rem 0;
+  margin: 1rem;
+  font-family: 'Work Sans','sans-serif';
+  font-size: 1.5rem;
+}
+
+.color {
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+  font-family: 'Work Sans','sans-serif';
+  font-size: 1.5rem;
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.mileage {
+  display: block;
+  padding: 1rem 0;
+  margin: 1rem;
+  font-family: 'Work Sans','sans-serif';
+  font-size: 1.5rem;
+}
+
+/*Footer styling*/
+footer p {
+  font-family: 'Work Sans', 'sans-serif';
+  font-size: 1rem;
+  background-color:#01B0D3;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+footer a {
+  display: block;
+  background-color: #01B0D3;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  border-radius: 10px;
+  
+
+}
+
+/*Error page styling*/
+.error-page-title {
+  font-family: 'Tektur', 'sans-serif';
+  margin: 1rem;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.error-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 2rem;
+}
+
+.error-text {
+  font-size: 2rem;
+  font-family: 'Work Sans', 'sans-serif';
+  margin: 1rem;
+  text-align: center;
+}
+
+.error-image {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+}
+
 /*Login Page style*/
 .login-page-title, .registration-page-title {
   margin: 1rem;
@@ -255,6 +443,14 @@ input {
   height: 2rem;
   font-size: 1rem;
   font-family: 'Work Sans', 'sans-serif';
+}
+
+input:required, input:required:invalid {
+  border: red solid 1px;
+}
+
+input:required:valid {
+  border-left: green solid 5px;
 }
 
 form p {
@@ -300,10 +496,85 @@ form p {
   color: white;
 }
 
-/*Add Classification View Styling*/
+#ShowPwdBtn {
+  padding: 5px;
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+/* Inventory Management view*/
+.management-page-title {
+  margin: 1rem;
+  font-family: 'Kanit', 'sans-serif';
+  font-size: 2rem;
+}
+
+.inv-management-list {
+  margin: 1rem;
+
+}
+
+.inv-management-list li { 
+  margin: 1.5rem;
+  list-style-type: disclosure-closed;
+}
+.inv-management-list li a {
+  font-family: 'Work Sans', 'sans-serif';
+  font-size: 1.5rem;
+  color: black;
+  padding: 1rem;
+}
+
+.manage-inventory-title {
+  margin: 1rem;
+  font-family: 'Kanit', 'sans-serif';
+  font-size: 1.5rem;
+}
+
+.manage-inventory-instructions {
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  margin: 1rem;
+  text-align: justify;
+}
+
+.classificationList {
+  margin: 1rem;
+  font-size: 1rem;
+}
+
+#inventoryDisplay {
+  margin: 2rem;
+  font-size: 1.5rem;
+  background-color: #4C96D7;
+}
+
+#inventoryDisplay th {
+  font-family: 'Kanit', 'sans-serif';
+  font-size: 1.5rem;
+  background-color: black;
+  color: white;
+
+}
+
+#inventoryDisplay td {
+  font-family: 'Work Sans', 'sans-serif';
+  font-size: 1rem;
+  padding: 1rem;
+  color: white;
+  border: 2px solid black;
+}
+
+#inventoryDisplay td a {
+  color: white;
+}
+/*Add Classification and Inventory View Styling*/
 .add-classification-page {
   margin: 1rem;
-  font-family: 'sans-serif';
+  font-family: 'Kanit', 'sans-serif';
   font-size: 2rem;
 }
 
@@ -320,10 +591,10 @@ form p {
   max-width: 500px;
 }
 
-.add-class-button {
+.add-class-button, .edit-inv-button  {
   height: 2rem;
   font-size: 1rem;
-  font-family: 'sans-serif';
+  font-family: 'Work Sans', 'sans-serif';
   background-color: white;
   color: black;
   border-radius: 5px;
@@ -332,8 +603,37 @@ form p {
 
 .add-inventory-title {
   margin: 1rem;
-  font-family: 'sans-serif';
+  font-family: 'Kanit', 'sans-serif';
   font-size: 2rem;
+}
+
+.modify-inventory-title {
+  margin: 1rem;
+  font-family: 'Kanit', 'sans-serif';
+  font-size: 2rem;
+}
+
+/*Account Management View*/
+.account-management-title {
+  margin: 1rem;
+  font-family: 'Kanit', 'sans-serif';
+  font-size: 2rem;
+}
+
+.account-management-list {
+  margin: 1rem;
+
+}
+
+.account-management-list li { 
+  margin: 1.5rem;
+  list-style-type: disclosure-closed;
+}
+.account-management-list li a {
+  font-family: 'Work Sans', 'sans-serif';
+  font-size: 1.5rem;
+  color: black;
+  padding: 1rem;
 }
 
 
