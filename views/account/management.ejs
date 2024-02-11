@@ -7,7 +7,21 @@
   <%  }) %>
    </ul>
   <% } %>
-    
-<ul class="account-management-list">
-    <li><a title="Click to edit your account information" href="#">Edit your account information</a></li>
-</ul>
+
+<% if(locals.accountData.account_type == 'Client') { %>
+    <h2 class="welcome-message">Welcome, <%= name %></h2>
+    <h3 class="management-header">Account Management</h3>   
+    <ul class="account-management-list">
+      <li><a title="Click to edit your account information" href="/account/update/">Edit Account information</a></li>
+    </ul>
+<% } else { %>
+    <h2 class="welcome-message">Welcome, <%= name %></h2>
+    <h3 class="management-header">Account Management</h3>   
+    <ul class="account-management-list">
+      <li><a title="Click to edit your account information" href="/account/update/">Edit Account information</a></li>
+    </ul>
+    <h3 class="management-header">Inventory Management</h3>
+    <ul class="inventory-management-list">
+      <li><a title="Click to update the inventory" href="/inv/">Update inventory</a></li>
+  </ul>
+<% } %>

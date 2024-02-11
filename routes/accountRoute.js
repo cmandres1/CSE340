@@ -4,19 +4,23 @@ const utilities = require("../utilities")
 const accountController = require("../controllers/accountController")
 const regValidate = require("../utilities/account-validation")
 
+
 //Default route
-router.get("/",
-    utilities.checkLogin,
-    utilities.handleErrors(accountController.buildAccountManagement))
+router.get("/",utilities.checkLogin,utilities.handleErrors(accountController.buildAccountManagement))
+
+router.get("/management",utilities.checkLogin,utilities.handleErrors(accountController.buildAccountManagement))
 
 //Route to build login, registration views
-router.get("/login", 
-    //utilities.passwordButton(),
-    utilities.handleErrors(accountController.buildLogin));
+router.get("/login",utilities.handleErrors(accountController.buildLogin));
 
-router.get("/registration",
-    //utilities.passwordButton(),
-    utilities.handleErrors(accountController.buildRegistration))
+//Route to logout
+router.get("/logout",
+    utilities.handleErrors(accountController.logout))    
+
+router.get("/registration",utilities.handleErrors(accountController.buildRegistration))
+
+//Route to build account update view
+router.get("/update",utilities.handleErrors(accountController.buildAccountUpdate))
 
 //Route to post a new user registration
 router.post("/register",
@@ -32,5 +36,24 @@ router.post(
         utilities.handleErrors(
         accountController.accountLogin)
       )
+
+// Process the update account using a post request
+router.post(
+  "/update-account", 
+  regValidate.updateRules(),
+  regValidate.checkUpdateData,
+  utilities.handleErrors(
+  accountController.accountUpdate)
+)
+
+// Process the update password using a post request
+router.post(
+  "/update-password", 
+  regValidate.updatePwdRules(),
+  regValidate.checkPwdUpdate,
+  utilities.handleErrors(
+  accountController.passwordUpdate)
+)
+
 
 module.exports = router;

@@ -28,7 +28,7 @@ body {
 #top-header a {
   text-decoration: none;
 }
-.siteName {
+span.siteName {
   padding-top: 2%;
 }
 
@@ -37,10 +37,35 @@ body {
   font-weight: bold;
   color: black;
 }
+span.site-name {
+  padding-top: 2%;
+}
 #tools {
   padding-top: 2%;
-  font-size: 15px;
+  font-size: 8px;
   text-transform: uppercase;
+}
+
+#tools a {
+  font-family: 'Work Sans','sans-serif';
+}
+
+#tools a:nth-child(2) {
+  color: white;
+  display: inline-block; 
+  padding: 2px 5px;
+  margin-left: 10px;
+  border: 2px solid #ccc; 
+  border-radius: 5px; 
+  text-decoration: none; 
+  background-color: black; 
+  transition: all 0.3s ease;
+}
+
+#tools a:nth-child(2):hover {
+  background-color: #f0f0f0; 
+  border-color: #999; 
+  color: #000; 
 }
 /* navigation */
 
@@ -362,7 +387,7 @@ main > h2, #reviews h2, #left-content h2 {
 footer p {
   font-family: 'Work Sans', 'sans-serif';
   font-size: 1rem;
-  background-color:#01B0D3;
+  background-color:black;
   color: white;
   margin: 0;
   padding: 1rem;
@@ -372,7 +397,7 @@ footer p {
 
 footer a {
   display: block;
-  background-color: #01B0D3;
+  background-color: black;
   color: white;
   margin: 0;
   padding: 1rem;
@@ -450,7 +475,7 @@ input:required, input:required:invalid {
 }
 
 input:required:valid {
-  border-left: green solid 5px;
+  border: green solid 2px;
 }
 
 form p {
@@ -519,11 +544,10 @@ form p {
 
 .inv-management-list li { 
   margin: 1.5rem;
-  list-style-type: disclosure-closed;
 }
 .inv-management-list li a {
   font-family: 'Work Sans', 'sans-serif';
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: black;
   padding: 1rem;
 }
@@ -578,12 +602,12 @@ form p {
   font-size: 2rem;
 }
 
-.add-classification-wrapper {
+.add-classification-wrapper, .delete-inventory-wrapper {
   display: grid;
   grid-template-columns: 1fr;
 }
 
-.add-box {
+.add-box, .delete-box {
   margin: 2rem auto;
   background-color: rgb(48, 93, 135);
   border-radius: 5px;
@@ -591,7 +615,7 @@ form p {
   max-width: 500px;
 }
 
-.add-class-button, .edit-inv-button  {
+.add-class-button, .edit-inv-button, .delete-inv-button {
   height: 2rem;
   font-size: 1rem;
   font-family: 'Work Sans', 'sans-serif';
@@ -627,14 +651,62 @@ form p {
 
 .account-management-list li { 
   margin: 1.5rem;
-  list-style-type: disclosure-closed;
 }
-.account-management-list li a {
+.account-management-list li a  {
   font-family: 'Work Sans', 'sans-serif';
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: black;
   padding: 1rem;
 }
+
+/* Delete */
+#deleteForm p {
+  text-decoration: underline;
+  font-weight: bold;  
+  }
+
+.delete-inventory-title {
+  margin: 1rem;
+  font-family: 'Kanit', 'sans-serif';
+  font-size: 2rem;
+}
+
+/*Update account styling*/
+.update-account-title {
+  margin: 1rem;
+  font-family: 'Kanit', 'sans-serif';
+  font-size: 2rem;
+}
+.update-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+fieldset {
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  color: white;
+  border: 2px double white;
+}
+
+.update-box {
+  margin: 2rem auto;
+  background-color: rgb(48, 93, 135);
+  border-radius: 5px;
+  border: 5px solid black;
+  max-width: 500px;
+}
+
+.update-button {
+  height: 2rem;
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
 
 
 @media screen and (min-width: 768px) {
@@ -733,5 +805,10 @@ form p {
   
   .details-inner-box {
     grid-column: 2/3;
+  }
+  #tools {
+    padding-top: 2%;
+    font-size: 15px;
+    text-transform: uppercase;
   }
 }

@@ -6,11 +6,11 @@ classificationList.addEventListener("change", function() {
     let classification_id = classificationList.value
     console.log(`classification_id is: ${classification_id}`)
     let classIdURL = "/inv/getInventory/"+classification_id
-    fetch(classIdURL).then(function(response) {
+    fetch(classIdURL)
+    .then(function (response) {
         if (response.ok) {
             return response.json()
-        } 
-        throw Error ("Network response was not OK");
+        } throw Error ("Network request problem")
     }).then(function (data){
         buildInventoryList(data);
     }).catch(function (error) {
