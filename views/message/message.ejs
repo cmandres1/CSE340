@@ -1,0 +1,49 @@
+<% if (title) { %>
+    <h1 class="title-h1"><%= title %></h1>
+    <% } else {
+        res.redirect('/')
+    } %>
+    
+    <%- messages() %>
+
+    <% if (errors) { %>
+        <ul class="notice">
+            <% errors.array().forEach(error => { %>
+            <li>* <%= error.msg %></li>
+            <% }) %>
+        </ul>
+        <% } %>
+        
+        <div class="message-section">
+            <%- messageInfo %>
+
+        <div class="inbox-options">
+            <a href="/message" title="Click to go to inbox">Return to Inbox</a>
+            <br>
+            
+<!--             <form class="message-action-btn" id="message-reply-form" action="/message/reply" method="post">
+                <input type="hidden" name="message_id" value="<%= message_id %>">
+                <button type="submit" id="reply-btn" >Reply</button>
+              </form>
+              <% if (!locals.message_read) { %>  -->
+              
+              <form class="message-action-btn" id="message-markRed-form" action="/message/mark-read" method="post">
+                <input type="hidden" name="message_id" value="<%= message_id %>">
+                <button type="submit" id="mark-read-btn" >Mark as Read</button>
+              </form>
+              
+              <% } %>
+            
+              <% if (!locals.message_archived) { %>
+              <form class="message-action-btn" id="archive-message" action="/message/archive" method="post">
+                <input type="hidden" name="message_id" value="<%= message_id %>">
+                <button type="submit" id="archive-btn" >Archive Message</button>
+              </form>
+              <% } %>
+
+              <form class="message-action-btn" id="delete-message" action="/message/delete" method="post">
+                <input type="hidden" name="message_id" value="<%= message_id %>">
+                <button type="submit" id="delete-btn" >Delete</button>
+              </form>
+        </div>
+    </div>

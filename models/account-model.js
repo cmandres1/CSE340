@@ -120,5 +120,23 @@ async function updateAccount( account_id, account_firstname, account_lastname, a
   }
 }
 
+async function getAccounts() {
+    return await pool.query("SELECT * FROM public.account ORDER BY account_firstname")
+}
 
-  module.exports = {registerAccount, checkExistingEmail, getAccountByEmail, passwordUpdate, updateAccount, getAccountDetailsById, checkExistingEmailUpdate}
+/**********************
+ * Return account data using id number
+ **********************/
+async function getAccountById (account_id) {
+  try {
+      const result = await pool.query(
+          'SELECT * FROM account WHERE account_id = $1', [account_id])
+          return result.rows[0]
+  } catch (error) {
+      console.error("Model error " + error) 
+      return new Error("No matching account found.")
+  }
+}
+
+
+  module.exports = {registerAccount, checkExistingEmail, getAccountByEmail, passwordUpdate, updateAccount, getAccountDetailsById, checkExistingEmailUpdate,getAccounts,getAccountById}

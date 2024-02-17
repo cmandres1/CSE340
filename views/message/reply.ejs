@@ -1,0 +1,52 @@
+<% if (title) { %>
+    <h1 class="title-h1"><%= title %></h1>
+    <% } else {
+        res.redirect('/')
+    } %>
+    
+    <%- messages() %>
+
+    <% if (errors) { %>
+        <ul class="error">
+            <% errors.array().forEach(error => { %>
+            <li>* <%= error.msg %></li>
+            <% }) %>
+        </ul>
+        <% } %>
+
+
+    <section class="form-cont">
+        <h2>Reply to: <%- senderName %></h2>
+        <form id="reply-mess-form" action="/message/send-reply" method="post">  
+          <p>All fields are required.</p>
+          <label for="message_to">To:</label><br>
+          <%- select %>
+          <br>
+          <label for="subject">Subject:</label><br>
+          <input
+                type="text"
+                name="message_subject"
+                id="subject"
+                required
+                value="<%= locals.message_subject %>"
+          ><br>
+          <label for="message_body">Message:</label><br>
+          <textarea  
+            name="message_body" 
+            id="message_body" 
+            required
+            rows="10" 
+            cols="50"
+            autofocus
+        ><%- message_body %></textarea><br>
+        
+        <input type="hidden" name="message_from"
+        <% if(locals.accountData.account_id) { %> value="<%= locals.accountData.account_id %>"
+        <% } %>>
+        <input type="hidden" name="message_original_id"
+         value="<%= locals.message_id %>">
+          <button type="submit" id="form-sub">Reply</button>
+        </form>
+
+        <a href="/message" title="Click to go to inbox">Return to Inbox</a>
+      </section>

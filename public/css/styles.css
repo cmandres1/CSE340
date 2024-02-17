@@ -470,11 +470,11 @@ input {
   font-family: 'Work Sans', 'sans-serif';
 }
 
-input:required, input:required:invalid {
+input:required, input:required:invalid, textarea:required:invalid {
   border: red solid 1px;
 }
 
-input:required:valid {
+input:required:valid, textarea:required:valid{
   border: green solid 2px;
 }
 
@@ -607,7 +607,7 @@ form p {
   grid-template-columns: 1fr;
 }
 
-.add-box, .delete-box {
+.add-box, .delete-box, .form-cont {
   margin: 2rem auto;
   background-color: rgb(48, 93, 135);
   border-radius: 5px;
@@ -707,8 +707,75 @@ fieldset {
   border: 2px solid black;
 }
 
+/* message system */
+.message-section {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  padding: 20px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
 
+.message-action-btn {
+  height: 2rem;
+  font-size: 1rem;
+  font-family: 'Work Sans', 'sans-serif';
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: 2px solid black;
+}
 
+.message-section li.bold {
+  font-weight: bold;
+  list-style: none;
+}
+
+.message-section span.no-bold, #message_body.no-bold{
+  font-weight: normal;
+}
+
+#inbox-options{
+  width: 100%;
+  }
+
+.inbox-options {
+border-top: 4px solid black;
+}
+
+#inbox {
+  margin-right: auto;
+  background-color: #f2f2f2; 
+  color: #444; 
+  padding: 20px; 
+  border-radius: 10px; 
+}
+#inbox th,
+#inbox td {
+  border: 1px solid #ccc; 
+  padding: 8px; 
+}
+
+#inbox th {
+  background-color: #ddd; 
+  font-weight: bold; 
+}
+.message-action-btn {
+  width: auto;
+  padding: .2em;
+  border: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: none;
+}
+
+#message_body {
+  white-space: pre-wrap;
+  width: 100%;
+}
 @media screen and (min-width: 768px) {
   body {
     margin: 2rem auto;

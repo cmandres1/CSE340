@@ -1,5 +1,6 @@
 const utilities = require("../utilities")
 const accountModel = require("../models/account-model")
+const messModel = require("../models/message-model")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
@@ -29,13 +30,16 @@ login.buildRegistration = async function (req, res, next) {
 login.buildAccountManagement = async function (req, res) {
   const account_id = parseInt(res.locals.accountData.account_id)
   let nav = await utilities.getNav()
+  const messages = await messModel.getMessageByAccountId(account_id)
+  const unreadMessages = await utilities.checkIfUnread(messages)
   const data = await accountModel.getAccountDetailsById(account_id)
   let name = `${data.account_firstname} ${data.account_lastname}`
   res.render("account/management", {
-    errors: null,
     title: "Account Management",
     nav,
-    name
+    name,
+    errors: null,
+    unreadMessage: unreadMessages.length
   })
 }
 

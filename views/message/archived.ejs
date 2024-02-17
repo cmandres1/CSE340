@@ -1,0 +1,22 @@
+<% if (title) { %>
+    <h1 class="title-h1"><%= title %></h1>
+    <% } else {
+        res.redirect('/')
+    } %>
+    
+    <%- messages() %>
+
+    <% if (errors) { %>
+        <ul class="notice">
+            <% errors.array().forEach(error => { %>
+            <li>* <%= error.msg %></li>
+            <% }) %>
+        </ul>
+        <% } %>
+
+        <ul id="inbox-options">
+            <li><a href="/message/new-message" title="Click to create a new message">Create New Message</a></li>
+            <li><a href="/message" title="Click to go to inbox">Return to Inbox</a></li>
+        </ul>
+
+        <%- archivedMessages %>
